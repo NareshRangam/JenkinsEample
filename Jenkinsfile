@@ -2,13 +2,15 @@ pipeline {
 
     agent any
 
+tools {
+        maven 'Maven 3.6.3'
+        jdk 'jdk13'
+    }
     stages {
 
         stage ('Build') {
             steps {
-                withMaven(maven: 'maven_3_5_0') {
-                    sh 'mvn clean package'
-                }
+                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
         }
 
