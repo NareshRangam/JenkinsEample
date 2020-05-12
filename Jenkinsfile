@@ -22,6 +22,7 @@ pipeline {
                                   usernameVariable: 'USERNAME',
                                   passwordVariable: 'PASSWORD']]) {
                                   echo 'hello'
+                                  echo $USERNAME
                     bat 'cf login -a https://api.run.pivotal.io -u $USERNAME -p $PASSWORD'
                 }
             }
