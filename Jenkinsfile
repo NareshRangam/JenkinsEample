@@ -35,4 +35,4 @@ pipeline {
 }
 
 
- cf login -a https://api.example.com -u username@example.com -o example-org -s development
+ 
