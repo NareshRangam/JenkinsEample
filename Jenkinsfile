@@ -9,8 +9,10 @@ tools {
     stages {
 
         stage ('Build') {
-            steps {
-                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
+           steps {
+                withMaven(maven : 'MAVEN') {
+                    sh 'mvn clean package'
+                }
             }
         }
 
