@@ -2,15 +2,12 @@ pipeline {
 
     agent any
 
-tools {
-        maven 'MAVEN'
-        jdk 'jdk13'
-    }
+
     stages {
 
         stage ('Build') {
-           steps {
-                withMaven(maven : 'MAVEN') {
+            steps {
+                withMaven(maven: 'MAVEN') {
                     sh 'mvn clean package'
                 }
             }
