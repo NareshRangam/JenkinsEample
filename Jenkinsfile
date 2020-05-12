@@ -2,16 +2,16 @@
 pipeline {
 
     agent any
-
+ tools {
+        maven 'Maven_3.6.3' 
+    }
     stages {
 
-        stage ('Build') {
+        stage('Build stage') {
             steps {
-                withMaven(maven: 'Maven_3.6.3') {
-                    sh 'mvn clean package'
-                }
-            }
+                bat 'mvn clean package' 
         }
+    }
 
         stage ('Deploy') {
             steps {
