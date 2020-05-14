@@ -1,16 +1,21 @@
 package com.example.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
 public class TestController {
-
-	@GetMapping("/notes")
+	
+	@RequestMapping("notes")
 	public String getName()
 	{
-		return "Iam Fine";
+		return "Am Fine";
+	}
+	
+	@RequestMapping("show")
+	public String getResult()
+	{
+		return "I got it";
 	}
 }
